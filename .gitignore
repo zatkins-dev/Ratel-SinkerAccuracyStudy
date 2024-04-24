@@ -1,0 +1,11 @@
+# output
+*.png
+*.cgns
+*.txt
+*.xmf
+*.bin
+*.csv
+*.pbin
+
+# meshes
+*.msh
