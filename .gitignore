@@ -9,3 +9,6 @@
 
 # meshes
 *.msh
+
+# created YML files
+*.yml
