@@ -6,17 +6,18 @@ RATEL=$RATEL_DIR/bin/ratel-quasistatic
 usage() { echo "Usage: $0 [-o <OUTPUT_DIR_BASENAME>] [-n <NUM_MPI_PROCS>] fem|mpm" 1>&2; exit 1; }
 
 # Arguments
-while getopts o:n: opt
-do	
+while getopts "o:n:" opt
+do
   case "$opt" in
-    o)	
+    o)
       OUTPUT_BASE_DIR="${OPTARG}-"
       ;;
-    n)	
+    n)
       NP=${OPTARG}
-      ((NP > 0)) || echo "Invalid number of MPI processes" 1>&2 && usage
+      ((NP > 0)) || (echo "Invalid number of MPI processes" 1>&2 && usage)
       ;;
-    *)	
+    *)
+      echo "Bad argument: -${opt} ${OPTARG}" 1>&2
       usage
       ;;
 	esac
@@ -24,17 +25,17 @@ done
 shift $((OPTIND-1))
 
 if [[ $# -ne 1 ]]; then
-    usage
+  echo "Wrong number of args: $#" 1>&2
+  usage
 fi
-
 case $1 in
-    fem|mpm)  # Ok
-        TEST_CASE=$1
-        ;;
-    *)
-        # The wrong first argument.
-        echo 'Expected "fem" or "mpm"' 1>&2
-        usage
+  fem|mpm)  # Ok
+    TEST_CASE=$1
+    ;;
+  *)
+    # The wrong first argument.
+    echo 'Expected "fem" or "mpm"' 1>&2
+    usage
 esac
 
 ROOT_DIR=$(dirname $(readlink -f "$0"))
@@ -65,7 +66,7 @@ for size in 5 10 15 20; do
   if [ "$TEST_CASE" = "mpm" ]; then
     ARGS="$ARGS -ts_monitor_swarm ascii:$OUTPUT_DIR/swarm.xmf"
   fi
-  
+
   rm -rf $OUTPUT_DIR
   mkdir $OUTPUT_DIR
   cp $OPTIONS_FILE $OUTPUT_DIR
@@ -75,7 +76,7 @@ for size in 5 10 15 20; do
   echo "  Arguments:  ${RATEL} $ARGS > $OUTPUT_DIR/run.stdout.txt"
   if [ "$size" != "20" ]; then
     mpirun -np $NP $RATEL $ARGS > $OUTPUT_DIR/run.stdout.txt &
-  else 
+  else
     mpirun -np $NP $RATEL $ARGS > $OUTPUT_DIR/run.stdout.txt
   fi
 done
