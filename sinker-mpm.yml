@@ -47,7 +47,7 @@ snes:
 
 forcing: body
 forcing_body:
-  vector: 0,0,-40
+  vector: 0,0,-60
 
 # Needed until Ceed*LinearAssemble* are implemented for points
 snes_mf:

@@ -39,15 +39,16 @@ ksp:
   norm_type: unpreconditioned
   converged_reason:
   converged_maxits:
-  max_it: 400
+  max_it: 1000
   gmres_modifiedgramschmidt:
 
 snes:
   converged_reason:
+  linesearch_max_it: 10
 
 forcing: body
 forcing_body:
-  vector: 0,0,-40
+  vector: 0,0,-60
 
 # surface forces
 surface_force_faces: top,bottom

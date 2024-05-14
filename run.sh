@@ -50,7 +50,7 @@ echo "  Test case:  $TEST_CASE"
 echo "  Output dir: $RUN_DIR"
 echo "  MPI procs:  $NP"
 
-for size in 5 10 15 20; do
+for size in 5 10 15; do
   OUTPUT_DIR=$RUN_DIR/sinker_hex_${size}
   MESH="$MESH_DIR/sinker_hex_${size}.msh"
   if [ ! -f "$MESH" ]; then
@@ -74,7 +74,7 @@ for size in 5 10 15 20; do
   echo "Running size ${size} test"
   echo "  Output dir: ${OUTPUT_DIR}"
   echo "  Arguments:  ${RATEL} $ARGS > $OUTPUT_DIR/run.stdout.txt"
-  if [ "$size" != "20" ]; then
+  if [ "$size" != "15" ]; then
     mpirun -np $NP $RATEL $ARGS > $OUTPUT_DIR/run.stdout.txt &
   else
     mpirun -np $NP $RATEL $ARGS > $OUTPUT_DIR/run.stdout.txt
