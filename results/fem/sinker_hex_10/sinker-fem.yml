@@ -1,0 +1,66 @@
+# Ratel problem specification
+# Multiple material domains
+
+order: 2
+
+dm_plex:
+  filename: /home/zatkins/project/micromorph/outputs/mpm-sinker-accuracy/meshes/sinker_hex_10.msh
+  simplex: 0
+
+material: sinker,foam
+
+foam:
+  model: elasticity-neo-hookean-current
+  E: 50e2
+  nu: 0.49
+  rho: 15
+  label:
+    name: "Cell Sets"
+    value: 2
+
+sinker:
+  model: elasticity-neo-hookean-current
+  E: 190e3
+  nu: 0.49
+  rho: 8050
+  label:
+    value: 1
+
+bc:
+  clamp: 1,2,3,4,5,6
+
+ts:
+  dt: 0.05
+  max_time: 1
+
+ksp:
+  converged_maxits:
+  type: gmres
+  norm_type: unpreconditioned
+  converged_reason:
+  converged_maxits:
+  max_it: 1000
+  gmres_modifiedgramschmidt:
+
+snes:
+  converged_reason:
+  linesearch_max_it: 10
+
+forcing: body
+forcing_body:
+  vector: 0,0,-60
+
+# surface forces
+surface_force_faces: top,bottom
+surface_force_face:
+  top_label_value: 1
+  bottom_label_value: 2
+
+# monitoring
+ts_monitor:
+  solution: cgns:/home/zatkins/project/micromorph/outputs/mpm-sinker-accuracy/fem/solution.cgns
+  diagnostic_quantities: cgns:/home/zatkins/project/micromorph/outputs/mpm-sinker-accuracy/fem/diagnostic.cgns
+  strain_energy: ascii:/home/zatkins/project/micromorph/outputs/mpm-sinker-accuracy/fem/strain_energy.csv
+  surface_force_per_face: ascii:/home/zatkins/project/micromorph/outputs/mpm-sinker-accuracy/fem/surface_force.csv
+ts_monitor:
+snes_monitor:

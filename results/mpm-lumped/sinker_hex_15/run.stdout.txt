@@ -1,0 +1,2727 @@
+DM Object: Solution 6 MPI processes
+  type: plex
+Solution in 3 dimensions:
+  Number of 0-cells per rank: 838 796 798 792 837 819
+  Number of 1-cells per rank: 2210 2120 2128 2108 2221 2172
+  Number of 2-cells per rank: 1939 1881 1891 1869 1962 1918
+  Number of 3-cells per rank: 566 556 560 552 577 564
+Labels:
+  depth: 4 strata with value/size (0 (838), 1 (2210), 2 (1939), 3 (566))
+  celltype: 4 strata with value/size (0 (838), 1 (2210), 4 (1939), 7 (566))
+  Cell Sets: 1 strata with value/size (2 (566))
+  Face Sets: 4 strata with value/size (1 (393), 3 (455), 5 (187), 6 (135))
+  sinker face label for DM face 1: 0 strata with value/size ()
+  sinker face label for DM face 2: 0 strata with value/size ()
+  foam face label for DM face 1: 2 strata with value/size (3 (70), 4 (104))
+  foam face label for DM face 2: 0 strata with value/size ()
+Field Q2:
+  adjacency FEM
+DM Object: (cdm_) 6 MPI processes
+  type: plex
+DM_0x55ace8bab4b0_1 in 3 dimensions:
+  Number of 0-cells per rank: 838 796 798 792 837 819
+  Number of 1-cells per rank: 2210 2120 2128 2108 2221 2172
+  Number of 2-cells per rank: 1939 1881 1891 1869 1962 1918
+  Number of 3-cells per rank: 566 556 560 552 577 564
+Labels:
+  depth: 4 strata with value/size (0 (838), 1 (2210), 2 (1939), 3 (566))
+  celltype: 4 strata with value/size (0 (838), 1 (2210), 4 (1939), 7 (566))
+  Cell Sets: 1 strata with value/size (2 (566))
+  Face Sets: 4 strata with value/size (1 (87), 3 (102), 5 (40), 6 (28))
+  sinker face label for DM face 1: 0 strata with value/size ()
+  sinker face label for DM face 2: 0 strata with value/size ()
+  foam face label for DM face 1: 2 strata with value/size (3 (70), 4 (104))
+  foam face label for DM face 2: 0 strata with value/size ()
+Field Q1:
+  adjacency FEM
+DM Object: (swarm_) 6 MPI processes
+  type: swarm
+DM_0x55ace8bab4b0_2 in 3 dimensions:
+  Number of particles per rank: -1 -1 -1 -1 -1 -1
+DM Object: Points Solution 6 MPI processes
+  type: plex
+Points Solution in 3 dimensions:
+  Number of 0-cells per rank: 838 796 798 792 837 819
+  Number of 1-cells per rank: 2210 2120 2128 2108 2221 2172
+  Number of 2-cells per rank: 1939 1881 1891 1869 1962 1918
+  Number of 3-cells per rank: 566 556 560 552 577 564
+Labels:
+  depth: 4 strata with value/size (0 (838), 1 (2210), 2 (1939), 3 (566))
+  celltype: 4 strata with value/size (0 (838), 1 (2210), 4 (1939), 7 (566))
+  Cell Sets: 1 strata with value/size (2 (566))
+  Face Sets: 4 strata with value/size (1 (393), 3 (455), 5 (187), 6 (135))
+  sinker face label for DM face 1: 0 strata with value/size ()
+  sinker face label for DM face 2: 0 strata with value/size ()
+  foam face label for DM face 1: 2 strata with value/size (3 (70), 4 (104))
+  foam face label for DM face 2: 0 strata with value/size ()
+Field Q2:
+  adjacency FEM
+----- Ratel Quasistatic Example -----
+
+Ratel Context:
+  MPI:
+    Hostname: zatkins-desktop
+    Total ranks: 6
+  libCEED:
+    Backend resource: /cpu/self/avx/blocked
+    Backend MemType: host
+  PETSc:
+    VecType: standard
+    MatType: shell
+  Swarm:
+    Global Points: 421875
+    Local Points (min/max): [69000, 72125]
+  Mesh:
+    Global DoFs: 73167
+    Local DoFs: [10869, 13242]
+  Method: material point method
+  Solver: quasistatic solver
+  Materials:
+    Ratel Material:
+      Name: sinker
+      Model: Neo-Hookean hyperelasticity at finite strain, in current configuration, with MPM
+        Command line option: elasticity-mpm-neo-hookean-current
+        Active fields:
+          Field 0:
+            Name:                 displacement
+            Number of components: 3
+            libCEED eval mode(s): gradient
+        Number of stored components: 16
+        Number of state components:  9
+        Diagnostic output size:
+          Projected:  16
+          Dual/Nodal: 1
+        Model Parameters:
+          -rho:
+            Description:  Density (kg/m^3)
+            Restrictions: rho >= 0
+Composite CeedOperator - Residual evaluator, u term
+  SubOperator 0 - volumetric term for sinker:
+    2 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+Composite CeedOperator - Residual evaluator, u term
+  SubOperator 0 - volumetric term for sinker:
+    4 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+Composite CeedOperator - Residual evaluator, u term
+  SubOperator 0 - volumetric term for sinker:
+    14 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+            Required:     false (Default: 1.)
+            Value:        8050.
+          -nu:
+            Description:  Poisson's ratio (unitless)
+            Restrictions: 0 <= nu < 0.5
+            Required:     true
+            Value:        0.49
+          -E:
+            Description:  Young's Modulus (Pa)
+            Restrictions: E >= 0
+            Required:     true
+            Value:        190000.
+          -mu:
+            Description:  Shear Modulus: E / (2 (1 + nu)) (Pa)
+            Restrictions: mu >= 0
+            Required:     false (Default: 0.)
+            Value:        63758.4
+          -lambda:
+            Description:  First Lame parameter: 2 mu nu / (1 - 2 nu) (Pa)
+            Restrictions: lambda >= 0
+            Required:     false (Default: 0.)
+Composite CeedOperator - Residual evaluator, u term
+  SubOperator 0 - volumetric term for sinker:
+    7 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 1 - volumetric term for foam:
+    553 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+Composite CeedOperator - Residual evaluator, u term
+  SubOperator 0 - volumetric term for sinker:
+    0 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 1 - volumetric term for foam:
+    564 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 1 - volumetric term for foam:
+    550 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+        Name: "mu"
+        Size: 1
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 1 - volumetric term for foam:
+    573 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 1 - volumetric term for foam:
+    542 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+            Value:        3.12416e+06
+          -bulk:
+            Description:  Bulk Modulus: 2 mu (1 + nu) / (3 (1 - 2 nu)) (Pa)
+            Restrictions: bulk >= 0
+            Required:     false (Default: 0.)
+            Value:        3.16667e+06
+          -two_mu:
+            Description:  Shear Modulus multiplied by 2 (Pa)
+            Restrictions: mu >= 0
+            Required:     false (Default: 0.)
+            Value:        127517.
+      Forcing: user-specified body force
+          1 acceleration vector(s) with no interpolation
+            t = 1.000: [0.000000, 0.000000, -3.000000]
+    Ratel Material:
+      Name: foam
+      Model: Neo-Hookean hyperelasticity at finite strain, in current configuration, with MPM
+        Command line option: elasticity-mpm-neo-hookean-current
+        Active fields:
+          Field 0:
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    3 output fields:
+      Output field 0:
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 2 - forcing for sinker:
+    2 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 2 - forcing for sinker:
+    4 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 2 - forcing for sinker:
+    14 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+            Name:                 displacement
+            Number of components: 3
+            libCEED eval mode(s): gradient
+        Number of stored components: 16
+        Number of state components:  9
+        Diagnostic output size:
+          Projected:  16
+          Dual/Nodal: 1
+        Model Parameters:
+          -rho:
+            Description:  Density (kg/m^3)
+            Restrictions: rho >= 0
+            Required:     false (Default: 1.)
+            Value:        15.
+          -nu:
+            Description:  Poisson's ratio (unitless)
+            Restrictions: 0 <= nu < 0.5
+            Required:     true
+            Value:        0.49
+          -E:
+            Description:  Young's Modulus (Pa)
+            Restrictions: E >= 0
+            Required:     true
+            Value:        5000.
+        Name: "current model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 2 - forcing for sinker:
+    7 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+  SubOperator 3 - forcing for foam:
+    553 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 2 - forcing for sinker:
+    0 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+  SubOperator 3 - forcing for foam:
+    564 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "rho"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+  SubOperator 3 - forcing for foam:
+    550 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+Composite CeedOperator - Jacobian
+  SubOperator 0 - volumetric term for sinker:
+    2 elements with 0 quadrature points each
+  SubOperator 3 - forcing for foam:
+    573 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+Composite CeedOperator - Jacobian
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+  SubOperator 3 - forcing for foam:
+    542 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "rho"
+        Size: 1
+          -mu:
+            Description:  Shear Modulus: E / (2 (1 + nu)) (Pa)
+            Restrictions: mu >= 0
+            Required:     false (Default: 0.)
+            Value:        1677.85
+          -lambda:
+            Description:  First Lame parameter: 2 mu nu / (1 - 2 nu) (Pa)
+            Restrictions: lambda >= 0
+            Required:     false (Default: 0.)
+            Value:        82214.8
+          -bulk:
+            Description:  Bulk Modulus: 2 mu (1 + nu) / (3 (1 - 2 nu)) (Pa)
+            Restrictions: bulk >= 0
+            Required:     false (Default: 0.)
+            Value:        83333.3
+          -two_mu:
+            Description:  Shear Modulus multiplied by 2 (Pa)
+            Restrictions: mu >= 0
+            Required:     false      Input field 1:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+Composite CeedOperator - Jacobian
+  SubOperator 0 - volumetric term for sinker:
+    7 elements with 0 quadrature points each
+    8 fields
+    7 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Input field 3:
+        Name: "d(du)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 4:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+Composite CeedOperator - Jacobian
+  SubOperator 0 - volumetric term for sinker:
+    0 elements with 0 quadrature points each
+    8 fields
+    7 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Input field 3:
+        Name: "d(du)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 4:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 6:
+        Name: "bulk"
+    8 fields
+    7 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Input field 3:
+        Name: "d(du)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 4:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 6:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "d(dv)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 1 - volumetric term for foam:
+    550 elements with 0 quadrature points each
+    8 fields
+    7 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+  SubOperator 0 - volumetric term for sinker:
+    4 elements with 0 quadrature points each
+    8 fields
+    7 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Input field 3:
+        Name: "d(du)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 4:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 6:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+Composite CeedOperator - Jacobian
+  SubOperator 0 - volumetric term for sinker:
+    14 elements with 0 quadrature points each
+    8 fields
+    7 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Input field 3:
+        Name: "d(du)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 4:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 6:
+        Name: "bulk"
+ (Default: 0.)
+            Value:        3355.7
+      Forcing: user-specified body force
+          1 acceleration vector(s) with no interpolation
+            t = 1.000: [0.000000, 0.000000, -3.000000]
+libCEED Operator Evaluator:
+Composite CeedOperator - Residual evaluator, u term
+  SubOperator 0 - volumetric term for sinker:
+    0 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+        Name: "rho"
+        No basis
+      Input field 6:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "d(dv)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 1 - volumetric term for foam:
+    553 elements with 0 quadrature points each
+    8 fields
+    7 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "d(dv)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 1 - volumetric term for foam:
+    564 elements with 0 quadrature points each
+    8 fields
+    7 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Input field 3:
+        Name: "d(du)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 4:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "mu"
+        Size: 1
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Input field 3:
+        Name: "d(du)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 4:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 6:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "d(dv)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+        Name: "d(dv)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 1 - volumetric term for foam:
+    573 elements with 0 quadrature points each
+    8 fields
+    7 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Input field 3:
+        Name: "d(du)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 4:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 6:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "d(dv)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "d(dv)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 1 - volumetric term for foam:
+    542 elements with 0 quadrature points each
+    8 fields
+    7 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Input field 3:
+        Name: "d(du)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 4:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 6:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "d(dv)/dX, field 0"
+        Size: 9
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 1 - volumetric term for foam:
+    566 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        No basis
+      Input field 3:
+        Name: "d(du)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 4:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 6:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "d(dv)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+        EvalMode: none
+        No basis
+      Input field 6:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "d(dv)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+        EvalMode: gradient
+        Active vector
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+        Size: 9
+Composite CeedOperator - Residual evaluator, u term
+  SubOperator 0 - volumetric term for sinker:
+    2 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+        Name: "rho"
+        Size: 1
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 2 - forcing for sinker:
+    0 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+Composite CeedOperator - Residual evaluator, u term
+  SubOperator 0 - volumetric term for sinker:
+    4 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+        EvalMode: none
+        No basis
+      Input field 4:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 1 - volumetric term for foam:
+    550 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+Composite CeedOperator - Residual evaluator, u term
+  SubOperator 0 - volumetric term for sinker:
+    14 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+  SubOperator 3 - forcing for foam:
+    566 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+Mat Object: Jacobian 6 MPI processes
+  type: ceed
+  MatCEED:
+  Default COO MatType:aij
+   libCEED Operator:
+Composite CeedOperator - Jacobian
+  SubOperator 0 - volumetric term for sinker:
+    0 elements with 0 quadrature points each
+    8 fields
+    7 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+Composite CeedOperator - Residual evaluator, u term
+  SubOperator 0 - volumetric term for sinker:
+    0 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 1 - volumetric term for foam:
+    564 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+Composite CeedOperator - Residual evaluator, u term
+  SubOperator 0 - volumetric term for sinker:
+    7 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 1 - volumetric term for foam:
+    553 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 1 - volumetric term for foam:
+    573 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 2 - forcing for sinker:
+        Active vector
+      Input field 3:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 2 - forcing for sinker:
+    2 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+  SubOperator 3 - forcing for foam:
+    550 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 1 - volumetric term for foam:
+    542 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 2 - forcing for sinker:
+    14 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "rho"
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Input field 3:
+        Name: "d(du)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 4:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 6:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "d(dv)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 1 - volumetric term for foam:
+    566 elements with 0 quadrature points each
+    8 fields
+    7 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Input field 3:
+        Name: "d(du)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 4:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 2 - forcing for sinker:
+    0 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+  SubOperator 3 - forcing for foam:
+    564 elements with 0 quadrature points each
+    3 fields
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 2 - forcing for sinker:
+    7 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+  SubOperator 3 - forcing for foam:
+    553 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+    4 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+  SubOperator 3 - forcing for foam:
+    573 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+  SubOperator 3 - forcing for foam:
+    542 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 6:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "d(dv)/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  Dirichlet (clamp) boundaries, field 0:
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+    Face 1:  1 translation(s)/rotation(s) with linear interpolation between nodes
+      t = 1.000:
+        Translation:         [0.000000, 0.000000, 0.000000]
+        Rotation axis:       [0.000000, 0.000000, 0.000000]
+        Rotation polynomial: [0.000000, 0.000000]
+    Face 2:  1 translation(s)/rotation(s) with linear interpolation between nodes
+      t = 1.000:
+        Translation:         [0.000000, 0.000000, 0.000000]
+        Rotation axis:       [0.000000, 0.000000, 0.000000]
+        Rotation polynomial: [0.000000, 0.000000]
+    Face 3:  1 translation(s)/rotation(s) with linear interpolation between nodes
+      t = 1.000:
+        Translation:         [0.000000, 0.000000, 0.000000]
+        Rotation axis:       [0.000000, 0.000000, 0.000000]
+        Rotation polynomial: [0.000000, 0.000000]
+    Face 4:  1 translation(s)/rotation(s) with linear interpolation between nodes
+      t = 1.000:
+        Translation:         [0.000000, 0.000000, 0.000000]
+        Rotation axis:       [0.000000, 0.000000, 0.000000]
+        Rotation polynomial: [0.000000, 0.000000]
+    Face 5:  1 translation(s)/rotation(s) with linear interpolation between nodes
+      t = 1.000:
+        Translation:         [0.000000, 0.000000, 0.000000]
+        Rotation axis:       [0.000000, 0.000000, 0.000000]
+        Rotation polynomial: [0.000000, 0.000000]
+    Face 6:  1 translation(s)/rotation(s) with linear interpolation between nodes
+      t = 1.000:
+        Translation:         [0.000000, 0.000000, 0.000000]
+        Rotation axis:       [0.000000, 0.000000, 0.000000]
+        Rotation polynomial: [0.000000, 0.000000]
+libCEED Operator Evaluator:
+Composite CeedOperator - Residual evaluator, u term
+  SubOperator 0 - volumetric term for sinker:
+    0 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 1 - volumetric term for foam:
+    566 elements with 0 quadrature points each
+    9 fields
+    6 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Input field 2:
+        Name: "du/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+      Input field 3:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 4:
+        Name: "mu"
+        Size: 1
+        EvalMode: none
+        No basis
+      Input field 5:
+        Name: "bulk"
+        Size: 1
+        EvalMode: none
+        No basis
+    3 output fields:
+      Output field 0:
+        Name: "current model state"
+        Size: 9
+        EvalMode: none
+        No basis
+      Output field 1:
+        Name: "stored values"
+        Size: 16
+        EvalMode: none
+        No basis
+      Output field 2:
+        Name: "dv/dX, field 0"
+        Size: 9
+        EvalMode: gradient
+        Active vector
+  SubOperator 2 - forcing for sinker:
+    0 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+  SubOperator 3 - forcing for foam:
+    566 elements with 0 quadrature points each
+    3 fields
+    2 input fields:
+      Input field 0:
+        Name: "q data"
+        Size: 10
+        EvalMode: none
+        No basis
+      Input field 1:
+        Name: "rho"
+        Size: 1
+        EvalMode: none
+        No basis
+    1 output field:
+      Output field 0:
+        Name: "force, field 0"
+        Size: 3
+        EvalMode: interpolation
+        Active vector
+  Initial condition:
+    Type: zero initial condition
+  Finite elements, field 0:
+    Polynomial order: 2
+    Additional quadrature points: 0
+    Basis application: tensor product
+    Element topology: hexahedron
+  Geometry order for diagnostic values mesh: use solution mesh geometric order
+  Has manufactured solution: no
+  Expected strain energy: not set
+0 TS dt 0.05 time 0.
+    0 SNES Function norm 1.507841465054e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1561
+    1 SNES Function norm 2.907351092280e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1451
+    2 SNES Function norm 5.978182475667e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1596
+    3 SNES Function norm 1.144977183048e-02
+      Linear solve converged due to CONVERGED_RTOL iterations 1304
+    4 SNES Function norm 1.258667891064e-07
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 4
+1 TS dt 0.05 time 0.05
+    0 SNES Function norm 1.462201144271e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1781
+    1 SNES Function norm 3.497068110951e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1465
+    2 SNES Function norm 5.303147779556e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1639
+    3 SNES Function norm 6.183856717899e-03
+      Linear solve converged due to CONVERGED_RTOL iterations 1370
+    4 SNES Function norm 6.092124983848e-08
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 4
+2 TS dt 0.05 time 0.1
+    0 SNES Function norm 1.468845546799e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1846
+    1 SNES Function norm 3.303156071471e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1545
+    2 SNES Function norm 6.330661783976e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1696
+    3 SNES Function norm 7.801574361035e-03
+      Linear solve converged due to CONVERGED_RTOL iterations 1379
+    4 SNES Function norm 1.012213933242e-07
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 4
+3 TS dt 0.05 time 0.15
+    0 SNES Function norm 1.483798272541e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1961
+    1 SNES Function norm 3.144443083223e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1648
+    2 SNES Function norm 7.307919388617e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1793
+    3 SNES Function norm 1.734225625177e-02
+      Linear solve converged due to CONVERGED_RTOL iterations 1443
+    4 SNES Function norm 2.014129926684e-07
+      Linear solve converged due to CONVERGED_RTOL iterations 1781
+    5 SNES Function norm 7.851383244428e-12
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 5
+4 TS dt 0.05 time 0.2
+    0 SNES Function norm 1.441524031500e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1916
+    1 SNES Function norm 3.355943623467e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1608
+    2 SNES Function norm 5.340467450073e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1790
+    3 SNES Function norm 7.417348372096e-03
+      Linear solve converged due to CONVERGED_RTOL iterations 1506
+    4 SNES Function norm 7.528181845948e-08
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 4
+5 TS dt 0.05 time 0.25
+    0 SNES Function norm 1.482285597089e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1874
+    1 SNES Function norm 2.906175408853e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1588
+    2 SNES Function norm 6.037614416978e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1730
+    3 SNES Function norm 7.850018127562e-03
+      Linear solve converged due to CONVERGED_RTOL iterations 1358
+    4 SNES Function norm 8.547260299091e-08
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 4
+6 TS dt 0.05 time 0.3
+    0 SNES Function norm 1.490596567640e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1857
+    1 SNES Function norm 3.872068528485e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1560
+    2 SNES Function norm 9.382783044776e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1700
+    3 SNES Function norm 1.704703163214e-02
+      Linear solve converged due to CONVERGED_RTOL iterations 1344
+    4 SNES Function norm 2.324759861651e-07
+      Linear solve converged due to CONVERGED_RTOL iterations 1749
+    5 SNES Function norm 5.543045572999e-12
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 5
+7 TS dt 0.05 time 0.35
+    0 SNES Function norm 1.442385698173e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1887
+    1 SNES Function norm 5.889632131297e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1524
+    2 SNES Function norm 1.216300946006e+00
+      Linear solve converged due to CONVERGED_RTOL iterations 1690
+    3 SNES Function norm 1.141644949640e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1196
+    4 SNES Function norm 2.551028249214e-06
+      Linear solve converged due to CONVERGED_RTOL iterations 1591
+    5 SNES Function norm 2.550418583150e-11
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 5
+8 TS dt 0.05 time 0.4
+    0 SNES Function norm 1.473278947828e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1888
+    1 SNES Function norm 3.778873497373e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1592
+    2 SNES Function norm 7.163012402539e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1758
+    3 SNES Function norm 1.537273326524e-02
+      Linear solve converged due to CONVERGED_RTOL iterations 1331
+    4 SNES Function norm 1.532070866306e-07
+      Linear solve converged due to CONVERGED_RTOL iterations 1804
+    5 SNES Function norm 4.356341691401e-12
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 5
+9 TS dt 0.05 time 0.45
+    0 SNES Function norm 1.488032990776e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1885
+    1 SNES Function norm 3.506269485863e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1586
+    2 SNES Function norm 8.308060682640e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1739
+    3 SNES Function norm 1.651198521790e-02
+      Linear solve converged due to CONVERGED_RTOL iterations 1382
+    4 SNES Function norm 1.832751198165e-07
+      Linear solve converged due to CONVERGED_RTOL iterations 1737
+    5 SNES Function norm 4.579398796809e-12
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 5
+10 TS dt 0.05 time 0.5
+    0 SNES Function norm 1.447599418461e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1896
+    1 SNES Function norm 6.532811596379e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1515
+    2 SNES Function norm 1.676919491715e+00
+      Linear solve converged due to CONVERGED_RTOL iterations 1669
+    3 SNES Function norm 8.594263556791e-02
+      Linear solve converged due to CONVERGED_RTOL iterations 1175
+    4 SNES Function norm 1.026150527999e-06
+      Linear solve converged due to CONVERGED_RTOL iterations 1654
+    5 SNES Function norm 1.118737263529e-11
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 5
+11 TS dt 0.05 time 0.55
+    0 SNES Function norm 1.448324157169e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1865
+    1 SNES Function norm 7.563766394367e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1459
+    2 SNES Function norm 1.851368212943e+00
+      Linear solve converged due to CONVERGED_RTOL iterations 1599
+    3 SNES Function norm 3.300248876376e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1117
+    4 SNES Function norm 1.019734358975e-05
+      Linear solve converged due to CONVERGED_RTOL iterations 1563
+    5 SNES Function norm 1.024643845969e-10
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 5
+12 TS dt 0.05 time 0.6
+    0 SNES Function norm 1.480860628578e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1904
+    1 SNES Function norm 4.022181706822e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1549
+    2 SNES Function norm 7.482241812423e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1725
+    3 SNES Function norm 1.678061515092e-02
+      Linear solve converged due to CONVERGED_RTOL iterations 1313
+    4 SNES Function norm 1.578171532465e-07
+      Linear solve converged due to CONVERGED_RTOL iterations 1716
+    5 SNES Function norm 3.652863651824e-12
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 5
+13 TS dt 0.05 time 0.65
+    0 SNES Function norm 1.478273510491e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1916
+    1 SNES Function norm 3.191354308599e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1593
+    2 SNES Function norm 6.985118397434e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1697
+    3 SNES Function norm 1.033876922831e-02
+      Linear solve converged due to CONVERGED_RTOL iterations 1376
+    4 SNES Function norm 8.504751339526e-08
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 4
+14 TS dt 0.05 time 0.7
+    0 SNES Function norm 1.447839066765e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1875
+    1 SNES Function norm 4.766147930804e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1482
+    2 SNES Function norm 9.012034512830e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1611
+    3 SNES Function norm 1.722627414228e-02
+      Linear solve converged due to CONVERGED_RTOL iterations 1236
+    4 SNES Function norm 1.633924322470e-07
+      Linear solve converged due to CONVERGED_RTOL iterations 1716
+    5 SNES Function norm 2.586876016933e-12
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 5
+15 TS dt 0.05 time 0.75
+    0 SNES Function norm 1.431070530733e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1885
+    1 SNES Function norm 7.460469253628e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1422
+    2 SNES Function norm 1.328668123935e+00
+      Linear solve converged due to CONVERGED_RTOL iterations 1546
+    3 SNES Function norm 1.253968548325e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1083
+    4 SNES Function norm 1.580416038387e-06
+      Linear solve converged due to CONVERGED_RTOL iterations 1692
+    5 SNES Function norm 1.566176483685e-11
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 5
+16 TS dt 0.05 time 0.8
+    0 SNES Function norm 1.439682263053e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1858
+    1 SNES Function norm 4.899158979101e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1407
+    2 SNES Function norm 4.329536090814e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1562
+    3 SNES Function norm 1.161635974740e-02
+      Linear solve converged due to CONVERGED_RTOL iterations 1111
+    4 SNES Function norm 1.043131029706e-07
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 4
+17 TS dt 0.05 time 0.85
+    0 SNES Function norm 1.457885181250e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1877
+    1 SNES Function norm 4.070934786035e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1408
+    2 SNES Function norm 2.485693061050e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1551
+    3 SNES Function norm 3.082800104372e-03
+      Linear solve converged due to CONVERGED_RTOL iterations 1119
+    4 SNES Function norm 3.044420493201e-08
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 4
+18 TS dt 0.05 time 0.9
+    0 SNES Function norm 1.470580406905e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1878
+    1 SNES Function norm 3.756165297016e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1397
+    2 SNES Function norm 1.622897058030e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1363
+    3 SNES Function norm 3.038296462322e-03
+      Linear solve converged due to CONVERGED_RTOL iterations 1032
+    4 SNES Function norm 2.897957096631e-08
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 4
+19 TS dt 0.05 time 0.95
+    0 SNES Function norm 1.468624056375e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1837
+    1 SNES Function norm 2.597389764285e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1355
+    2 SNES Function norm 7.503015401759e-02
+      Linear solve converged due to CONVERGED_RTOL iterations 1441
+    3 SNES Function norm 2.857384996611e-04
+      Linear solve converged due to CONVERGED_RTOL iterations 1085
+    4 SNES Function norm 2.776348737201e-09
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 4
+20 TS dt 0.05 time 1.
+TS steps: 20
+TS converged reason: CONVERGED_TIME
+Computed strain energy: 1.499449760320e+04
+Max displacement:       [1.110548122186e-01, 1.110548122186e-01, 3.645083348518e-01]
+Surface top:
+  Centroid:             [-9.714451465470e-17, 1.026956297778e-15, -5.000000000000e-01]
+  Surface Force:        [-5.078354661237e-07, 2.816041160258e-07, -6.860777679642e+04]
+Surface bottom:
+  Centroid:             [8.105495441502e-16, -8.743006318923e-16, 5.000000000000e-01]
+  Surface Force:        [-3.097411216402e-12, -1.061195575858e-10, -2.249524698743e+03]
+Time taken to compute solution (sec): 17857.5
+WARNING! There are options you set that were not used!
+WARNING! could be spelling mistake, etc!
+There is one unused database option. It is:
+Option left: name:-swarm_dm_view (no value) source: file

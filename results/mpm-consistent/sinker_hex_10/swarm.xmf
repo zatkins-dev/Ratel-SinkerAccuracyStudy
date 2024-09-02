@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Xdmf xmlns:xi="http://www.w3.org/2001/XInclude/" Version="2.99">
+  <Domain>
+    <Grid Name="CellTime" GridType="Collection" CollectionType="Temporal">
+      <Grid Name="DMSwarm[DM_0x84000002_2]" GridType="Uniform">
+        <Time Value="0.000000"/>
+        <Topology Dimensions="125000" TopologyType="Mixed">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="375000" Seek="0">
+            swarm_0.pbin
+          </DataItem>
+        </Topology>
+        <Geometry Type="XYZ">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="125000 3" Seek="1500000">
+            swarm_0.pbin
+          </DataItem>
+        </Geometry>
+        <Attribute Center="Node" Name="displacement" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="125000 3" Seek="4500000">
+            swarm_0.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="rho" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="125000" Seek="7500000">
+            swarm_0.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="mu" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="125000" Seek="8500000">
+            swarm_0.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="bulk" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="125000" Seek="9500000">
+            swarm_0.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="volume" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="125000" Seek="10500000">
+            swarm_0.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_cellid" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="125000" Seek="11500000">
+            swarm_0.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_rank" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="125000" Seek="12000000">
+            swarm_0.pbin
+          </DataItem>
+        </Attribute>
+      </Grid>
+      <Grid Name="DMSwarm[DM_0x84000002_2]" GridType="Uniform">
+        <Time Value="0.050000"/>
+        <Topology Dimensions="125000" TopologyType="Mixed">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="375000" Seek="0">
+            swarm_1.pbin
+          </DataItem>
+        </Topology>
+        <Geometry Type="XYZ">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="125000 3" Seek="1500000">
+            swarm_1.pbin
+          </DataItem>
+        </Geometry>
+        <Attribute Center="Node" Name="displacement" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="125000 3" Seek="4500000">
+            swarm_1.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="rho" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="125000" Seek="7500000">
+            swarm_1.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="mu" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="125000" Seek="8500000">
+            swarm_1.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="bulk" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="125000" Seek="9500000">
+            swarm_1.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="volume" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="125000" Seek="10500000">
+            swarm_1.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_cellid" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="125000" Seek="11500000">
+            swarm_1.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_rank" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="125000" Seek="12000000">
+            swarm_1.pbin
+          </DataItem>
+        </Attribute>
+      </Grid>
+      <Grid Name="DMSwarm[DM_0x84000002_2]" GridType="Uniform">
+        <Time Value="0.100000"/>
+        <Topology Dimensions="125000" TopologyType="Mixed">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="375000" Seek="0">
+            swarm_2.pbin
+          </DataItem>
+        </Topology>
+        <Geometry Type="XYZ">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="125000 3" Seek="1500000">
+            swarm_2.pbin
+          </DataItem>
+        </Geometry>
+        <Attribute Center="Node" Name="displacement" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="125000 3" Seek="4500000">
+            swarm_2.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="rho" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="125000" Seek="7500000">
+            swarm_2.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="mu" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="125000" Seek="8500000">
+            swarm_2.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="bulk" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="125000" Seek="9500000">
+            swarm_2.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="volume" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="125000" Seek="10500000">
+            swarm_2.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_cellid" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="125000" Seek="11500000">
+            swarm_2.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_rank" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="125000" Seek="12000000">
+            swarm_2.pbin
+          </DataItem>
+        </Attribute>
+      </Grid>
+      <Grid Name="DMSwarm[DM_0x84000002_2]" GridType="Uniform">
+        <Time Value="0.150000"/>
+        <Topology Dimensions="124994" TopologyType="Mixed">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="374982" Seek="0">
+            swarm_3.pbin
+          </DataItem>
+        </Topology>
+        <Geometry Type="XYZ">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124994 3" Seek="1499928">
+            swarm_3.pbin
+          </DataItem>
+        </Geometry>
+        <Attribute Center="Node" Name="displacement" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124994 3" Seek="4499784">
+            swarm_3.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="rho" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124994" Seek="7499640">
+            swarm_3.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="mu" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124994" Seek="8499592">
+            swarm_3.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="bulk" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124994" Seek="9499544">
+            swarm_3.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="volume" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124994" Seek="10499496">
+            swarm_3.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_cellid" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124994" Seek="11499448">
+            swarm_3.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_rank" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124994" Seek="11999424">
+            swarm_3.pbin
+          </DataItem>
+        </Attribute>
+      </Grid>
+      <Grid Name="DMSwarm[DM_0x84000002_2]" GridType="Uniform">
+        <Time Value="0.200000"/>
+        <Topology Dimensions="124990" TopologyType="Mixed">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="374970" Seek="0">
+            swarm_4.pbin
+          </DataItem>
+        </Topology>
+        <Geometry Type="XYZ">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124990 3" Seek="1499880">
+            swarm_4.pbin
+          </DataItem>
+        </Geometry>
+        <Attribute Center="Node" Name="displacement" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124990 3" Seek="4499640">
+            swarm_4.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="rho" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124990" Seek="7499400">
+            swarm_4.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="mu" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124990" Seek="8499320">
+            swarm_4.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="bulk" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124990" Seek="9499240">
+            swarm_4.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="volume" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124990" Seek="10499160">
+            swarm_4.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_cellid" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124990" Seek="11499080">
+            swarm_4.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_rank" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124990" Seek="11999040">
+            swarm_4.pbin
+          </DataItem>
+        </Attribute>
+      </Grid>
+      <Grid Name="DMSwarm[DM_0x84000002_2]" GridType="Uniform">
+        <Time Value="0.250000"/>
+        <Topology Dimensions="124988" TopologyType="Mixed">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="374964" Seek="0">
+            swarm_5.pbin
+          </DataItem>
+        </Topology>
+        <Geometry Type="XYZ">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124988 3" Seek="1499856">
+            swarm_5.pbin
+          </DataItem>
+        </Geometry>
+        <Attribute Center="Node" Name="displacement" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124988 3" Seek="4499568">
+            swarm_5.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="rho" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124988" Seek="7499280">
+            swarm_5.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="mu" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124988" Seek="8499184">
+            swarm_5.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="bulk" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124988" Seek="9499088">
+            swarm_5.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="volume" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124988" Seek="10498992">
+            swarm_5.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_cellid" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124988" Seek="11498896">
+            swarm_5.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_rank" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124988" Seek="11998848">
+            swarm_5.pbin
+          </DataItem>
+        </Attribute>
+      </Grid>
+      <Grid Name="DMSwarm[DM_0x84000002_2]" GridType="Uniform">
+        <Time Value="0.300000"/>
+        <Topology Dimensions="124988" TopologyType="Mixed">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="374964" Seek="0">
+            swarm_6.pbin
+          </DataItem>
+        </Topology>
+        <Geometry Type="XYZ">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124988 3" Seek="1499856">
+            swarm_6.pbin
+          </DataItem>
+        </Geometry>
+        <Attribute Center="Node" Name="displacement" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124988 3" Seek="4499568">
+            swarm_6.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="rho" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124988" Seek="7499280">
+            swarm_6.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="mu" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124988" Seek="8499184">
+            swarm_6.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="bulk" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124988" Seek="9499088">
+            swarm_6.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="volume" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124988" Seek="10498992">
+            swarm_6.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_cellid" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124988" Seek="11498896">
+            swarm_6.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_rank" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124988" Seek="11998848">
+            swarm_6.pbin
+          </DataItem>
+        </Attribute>
+      </Grid>
+      <Grid Name="DMSwarm[DM_0x84000002_2]" GridType="Uniform">
+        <Time Value="0.350000"/>
+        <Topology Dimensions="124982" TopologyType="Mixed">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="374946" Seek="0">
+            swarm_7.pbin
+          </DataItem>
+        </Topology>
+        <Geometry Type="XYZ">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124982 3" Seek="1499784">
+            swarm_7.pbin
+          </DataItem>
+        </Geometry>
+        <Attribute Center="Node" Name="displacement" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124982 3" Seek="4499352">
+            swarm_7.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="rho" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124982" Seek="7498920">
+            swarm_7.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="mu" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124982" Seek="8498776">
+            swarm_7.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="bulk" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124982" Seek="9498632">
+            swarm_7.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="volume" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124982" Seek="10498488">
+            swarm_7.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_cellid" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124982" Seek="11498344">
+            swarm_7.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_rank" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124982" Seek="11998272">
+            swarm_7.pbin
+          </DataItem>
+        </Attribute>
+      </Grid>
+      <Grid Name="DMSwarm[DM_0x84000002_2]" GridType="Uniform">
+        <Time Value="0.400000"/>
+        <Topology Dimensions="124980" TopologyType="Mixed">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="374940" Seek="0">
+            swarm_8.pbin
+          </DataItem>
+        </Topology>
+        <Geometry Type="XYZ">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124980 3" Seek="1499760">
+            swarm_8.pbin
+          </DataItem>
+        </Geometry>
+        <Attribute Center="Node" Name="displacement" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124980 3" Seek="4499280">
+            swarm_8.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="rho" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124980" Seek="7498800">
+            swarm_8.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="mu" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124980" Seek="8498640">
+            swarm_8.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="bulk" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124980" Seek="9498480">
+            swarm_8.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="volume" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124980" Seek="10498320">
+            swarm_8.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_cellid" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124980" Seek="11498160">
+            swarm_8.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_rank" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124980" Seek="11998080">
+            swarm_8.pbin
+          </DataItem>
+        </Attribute>
+      </Grid>
+      <Grid Name="DMSwarm[DM_0x84000002_2]" GridType="Uniform">
+        <Time Value="0.450000"/>
+        <Topology Dimensions="124976" TopologyType="Mixed">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="374928" Seek="0">
+            swarm_9.pbin
+          </DataItem>
+        </Topology>
+        <Geometry Type="XYZ">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124976 3" Seek="1499712">
+            swarm_9.pbin
+          </DataItem>
+        </Geometry>
+        <Attribute Center="Node" Name="displacement" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124976 3" Seek="4499136">
+            swarm_9.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="rho" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124976" Seek="7498560">
+            swarm_9.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="mu" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124976" Seek="8498368">
+            swarm_9.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="bulk" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124976" Seek="9498176">
+            swarm_9.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="volume" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124976" Seek="10497984">
+            swarm_9.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_cellid" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124976" Seek="11497792">
+            swarm_9.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_rank" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124976" Seek="11997696">
+            swarm_9.pbin
+          </DataItem>
+        </Attribute>
+      </Grid>
+      <Grid Name="DMSwarm[DM_0x84000002_2]" GridType="Uniform">
+        <Time Value="0.500000"/>
+        <Topology Dimensions="124970" TopologyType="Mixed">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="374910" Seek="0">
+            swarm_10.pbin
+          </DataItem>
+        </Topology>
+        <Geometry Type="XYZ">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124970 3" Seek="1499640">
+            swarm_10.pbin
+          </DataItem>
+        </Geometry>
+        <Attribute Center="Node" Name="displacement" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124970 3" Seek="4498920">
+            swarm_10.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="rho" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124970" Seek="7498200">
+            swarm_10.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="mu" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124970" Seek="8497960">
+            swarm_10.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="bulk" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124970" Seek="9497720">
+            swarm_10.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="volume" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124970" Seek="10497480">
+            swarm_10.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_cellid" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124970" Seek="11497240">
+            swarm_10.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_rank" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124970" Seek="11997120">
+            swarm_10.pbin
+          </DataItem>
+        </Attribute>
+      </Grid>
+      <Grid Name="DMSwarm[DM_0x84000002_2]" GridType="Uniform">
+        <Time Value="0.550000"/>
+        <Topology Dimensions="124968" TopologyType="Mixed">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="374904" Seek="0">
+            swarm_11.pbin
+          </DataItem>
+        </Topology>
+        <Geometry Type="XYZ">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124968 3" Seek="1499616">
+            swarm_11.pbin
+          </DataItem>
+        </Geometry>
+        <Attribute Center="Node" Name="displacement" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124968 3" Seek="4498848">
+            swarm_11.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="rho" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124968" Seek="7498080">
+            swarm_11.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="mu" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124968" Seek="8497824">
+            swarm_11.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="bulk" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124968" Seek="9497568">
+            swarm_11.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="volume" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124968" Seek="10497312">
+            swarm_11.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_cellid" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124968" Seek="11497056">
+            swarm_11.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_rank" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124968" Seek="11996928">
+            swarm_11.pbin
+          </DataItem>
+        </Attribute>
+      </Grid>
+      <Grid Name="DMSwarm[DM_0x84000002_2]" GridType="Uniform">
+        <Time Value="0.600000"/>
+        <Topology Dimensions="124966" TopologyType="Mixed">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="374898" Seek="0">
+            swarm_12.pbin
+          </DataItem>
+        </Topology>
+        <Geometry Type="XYZ">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124966 3" Seek="1499592">
+            swarm_12.pbin
+          </DataItem>
+        </Geometry>
+        <Attribute Center="Node" Name="displacement" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124966 3" Seek="4498776">
+            swarm_12.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="rho" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124966" Seek="7497960">
+            swarm_12.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="mu" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124966" Seek="8497688">
+            swarm_12.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="bulk" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124966" Seek="9497416">
+            swarm_12.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="volume" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124966" Seek="10497144">
+            swarm_12.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_cellid" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124966" Seek="11496872">
+            swarm_12.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_rank" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124966" Seek="11996736">
+            swarm_12.pbin
+          </DataItem>
+        </Attribute>
+      </Grid>
+      <Grid Name="DMSwarm[DM_0x84000002_2]" GridType="Uniform">
+        <Time Value="0.650000"/>
+        <Topology Dimensions="124966" TopologyType="Mixed">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="374898" Seek="0">
+            swarm_13.pbin
+          </DataItem>
+        </Topology>
+        <Geometry Type="XYZ">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124966 3" Seek="1499592">
+            swarm_13.pbin
+          </DataItem>
+        </Geometry>
+        <Attribute Center="Node" Name="displacement" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124966 3" Seek="4498776">
+            swarm_13.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="rho" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124966" Seek="7497960">
+            swarm_13.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="mu" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124966" Seek="8497688">
+            swarm_13.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="bulk" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124966" Seek="9497416">
+            swarm_13.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="volume" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124966" Seek="10497144">
+            swarm_13.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_cellid" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124966" Seek="11496872">
+            swarm_13.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_rank" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124966" Seek="11996736">
+            swarm_13.pbin
+          </DataItem>
+        </Attribute>
+      </Grid>
+      <Grid Name="DMSwarm[DM_0x84000002_2]" GridType="Uniform">
+        <Time Value="0.700000"/>
+        <Topology Dimensions="124964" TopologyType="Mixed">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="374892" Seek="0">
+            swarm_14.pbin
+          </DataItem>
+        </Topology>
+        <Geometry Type="XYZ">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964 3" Seek="1499568">
+            swarm_14.pbin
+          </DataItem>
+        </Geometry>
+        <Attribute Center="Node" Name="displacement" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964 3" Seek="4498704">
+            swarm_14.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="rho" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="7497840">
+            swarm_14.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="mu" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="8497552">
+            swarm_14.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="bulk" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="9497264">
+            swarm_14.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="volume" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="10496976">
+            swarm_14.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_cellid" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124964" Seek="11496688">
+            swarm_14.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_rank" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124964" Seek="11996544">
+            swarm_14.pbin
+          </DataItem>
+        </Attribute>
+      </Grid>
+      <Grid Name="DMSwarm[DM_0x84000002_2]" GridType="Uniform">
+        <Time Value="0.750000"/>
+        <Topology Dimensions="124964" TopologyType="Mixed">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="374892" Seek="0">
+            swarm_15.pbin
+          </DataItem>
+        </Topology>
+        <Geometry Type="XYZ">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964 3" Seek="1499568">
+            swarm_15.pbin
+          </DataItem>
+        </Geometry>
+        <Attribute Center="Node" Name="displacement" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964 3" Seek="4498704">
+            swarm_15.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="rho" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="7497840">
+            swarm_15.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="mu" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="8497552">
+            swarm_15.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="bulk" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="9497264">
+            swarm_15.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="volume" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="10496976">
+            swarm_15.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_cellid" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124964" Seek="11496688">
+            swarm_15.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_rank" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124964" Seek="11996544">
+            swarm_15.pbin
+          </DataItem>
+        </Attribute>
+      </Grid>
+      <Grid Name="DMSwarm[DM_0x84000002_2]" GridType="Uniform">
+        <Time Value="0.800000"/>
+        <Topology Dimensions="124964" TopologyType="Mixed">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="374892" Seek="0">
+            swarm_16.pbin
+          </DataItem>
+        </Topology>
+        <Geometry Type="XYZ">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964 3" Seek="1499568">
+            swarm_16.pbin
+          </DataItem>
+        </Geometry>
+        <Attribute Center="Node" Name="displacement" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964 3" Seek="4498704">
+            swarm_16.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="rho" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="7497840">
+            swarm_16.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="mu" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="8497552">
+            swarm_16.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="bulk" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="9497264">
+            swarm_16.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="volume" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="10496976">
+            swarm_16.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_cellid" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124964" Seek="11496688">
+            swarm_16.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_rank" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124964" Seek="11996544">
+            swarm_16.pbin
+          </DataItem>
+        </Attribute>
+      </Grid>
+      <Grid Name="DMSwarm[DM_0x84000002_2]" GridType="Uniform">
+        <Time Value="0.850000"/>
+        <Topology Dimensions="124964" TopologyType="Mixed">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="374892" Seek="0">
+            swarm_17.pbin
+          </DataItem>
+        </Topology>
+        <Geometry Type="XYZ">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964 3" Seek="1499568">
+            swarm_17.pbin
+          </DataItem>
+        </Geometry>
+        <Attribute Center="Node" Name="displacement" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964 3" Seek="4498704">
+            swarm_17.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="rho" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="7497840">
+            swarm_17.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="mu" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="8497552">
+            swarm_17.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="bulk" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="9497264">
+            swarm_17.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="volume" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="10496976">
+            swarm_17.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_cellid" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124964" Seek="11496688">
+            swarm_17.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_rank" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124964" Seek="11996544">
+            swarm_17.pbin
+          </DataItem>
+        </Attribute>
+      </Grid>
+      <Grid Name="DMSwarm[DM_0x84000002_2]" GridType="Uniform">
+        <Time Value="0.900000"/>
+        <Topology Dimensions="124964" TopologyType="Mixed">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="374892" Seek="0">
+            swarm_18.pbin
+          </DataItem>
+        </Topology>
+        <Geometry Type="XYZ">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964 3" Seek="1499568">
+            swarm_18.pbin
+          </DataItem>
+        </Geometry>
+        <Attribute Center="Node" Name="displacement" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964 3" Seek="4498704">
+            swarm_18.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="rho" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="7497840">
+            swarm_18.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="mu" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="8497552">
+            swarm_18.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="bulk" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="9497264">
+            swarm_18.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="volume" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="10496976">
+            swarm_18.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_cellid" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124964" Seek="11496688">
+            swarm_18.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_rank" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124964" Seek="11996544">
+            swarm_18.pbin
+          </DataItem>
+        </Attribute>
+      </Grid>
+      <Grid Name="DMSwarm[DM_0x84000002_2]" GridType="Uniform">
+        <Time Value="0.950000"/>
+        <Topology Dimensions="124964" TopologyType="Mixed">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="374892" Seek="0">
+            swarm_19.pbin
+          </DataItem>
+        </Topology>
+        <Geometry Type="XYZ">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964 3" Seek="1499568">
+            swarm_19.pbin
+          </DataItem>
+        </Geometry>
+        <Attribute Center="Node" Name="displacement" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964 3" Seek="4498704">
+            swarm_19.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="rho" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="7497840">
+            swarm_19.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="mu" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="8497552">
+            swarm_19.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="bulk" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="9497264">
+            swarm_19.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="volume" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="10496976">
+            swarm_19.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_cellid" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124964" Seek="11496688">
+            swarm_19.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_rank" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124964" Seek="11996544">
+            swarm_19.pbin
+          </DataItem>
+        </Attribute>
+      </Grid>
+      <Grid Name="DMSwarm[DM_0x84000002_2]" GridType="Uniform">
+        <Time Value="1.000000"/>
+        <Topology Dimensions="124964" TopologyType="Mixed">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="374892" Seek="0">
+            swarm_20.pbin
+          </DataItem>
+        </Topology>
+        <Geometry Type="XYZ">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964 3" Seek="1499568">
+            swarm_20.pbin
+          </DataItem>
+        </Geometry>
+        <Attribute Center="Node" Name="displacement" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964 3" Seek="4498704">
+            swarm_20.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="rho" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="7497840">
+            swarm_20.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="mu" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="8497552">
+            swarm_20.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="bulk" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="9497264">
+            swarm_20.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="volume" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Float" Precision="8" Dimensions="124964" Seek="10496976">
+            swarm_20.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_cellid" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124964" Seek="11496688">
+            swarm_20.pbin
+          </DataItem>
+        </Attribute>
+        <Attribute Center="Node" Name="DMSwarm_rank" Type="None">
+          <DataItem Format="Binary" Endian="Big" DataType="Int" Precision="4" Dimensions="124964" Seek="11996544">
+            swarm_20.pbin
+          </DataItem>
+        </Attribute>
+      </Grid>
+    </Grid>
+  </Domain>
+</Xdmf>

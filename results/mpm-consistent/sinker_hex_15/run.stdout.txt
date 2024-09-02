@@ -1,0 +1,480 @@
+DM Object: Solution 12 MPI processes
+  type: plex
+Solution in 3 dimensions:
+  Number of 0-cells per rank: 462 526 487 494 497 525 534 491 498 495 542 440
+  Number of 1-cells per rank: 1176 1292 1224 1231 1237 1287 1303 1223 1240 1242 1322 1138
+  Number of 2-cells per rank: 997 1050 1020 1020 1023 1045 1052 1015 1024 1029 1063 980
+  Number of 3-cells per rank: 282 282 282 281 281 281 281 281 281 281 281 281
+Labels:
+  depth: 4 strata with value/size (0 (462), 1 (1176), 2 (997), 3 (282))
+  celltype: 4 strata with value/size (0 (462), 1 (1176), 4 (997), 7 (282))
+  Cell Sets: 2 strata with value/size (1 (27), 2 (255))
+  Face Sets: 3 strata with value/size (1 (169), 3 (209), 6 (201))
+  sinker face label for DM face 1: 0 strata with value/size ()
+  sinker face label for DM face 2: 0 strata with value/size ()
+  foam face label for DM face 1: 1 strata with value/size (3 (72))
+  foam face label for DM face 2: 0 strata with value/size ()
+Field Q2:
+  adjacency FEM
+DM Object: (cdm_) 12 MPI processes
+  type: plex
+DM_0x84000002_1 in 3 dimensions:
+  Number of 0-cells per rank: 462 526 487 494 497 525 534 491 498 495 542 440
+  Number of 1-cells per rank: 1176 1292 1224 1231 1237 1287 1303 1223 1240 1242 1322 1138
+  Number of 2-cells per rank: 997 1050 1020 1020 1023 1045 1052 1015 1024 1029 1063 980
+  Number of 3-cells per rank: 282 282 282 281 281 281 281 281 281 281 281 281
+Labels:
+  depth: 4 strata with value/size (0 (462), 1 (1176), 2 (997), 3 (282))
+  celltype: 4 strata with value/size (0 (462), 1 (1176), 4 (997), 7 (282))
+  Cell Sets: 2 strata with value/size (1 (27), 2 (255))
+  Face Sets: 3 strata with value/size (1 (36), 3 (45), 6 (43))
+  sinker face label for DM face 1: 0 strata with value/size ()
+  sinker face label for DM face 2: 0 strata with value/size ()
+  foam face label for DM face 1: 1 strata with value/size (3 (72))
+  foam face label for DM face 2: 0 strata with value/size ()
+Field Q1:
+  adjacency FEM
+DM Object: (swarm_) 12 MPI processes
+  type: swarm
+DM_0x84000002_2 in 3 dimensions:
+  Number of particles per rank: -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1 -1
+DM Object: Points Solution 12 MPI processes
+  type: plex
+Points Solution in 3 dimensions:
+  Number of 0-cells per rank: 462 526 487 494 497 525 534 491 498 495 542 440
+  Number of 1-cells per rank: 1176 1292 1224 1231 1237 1287 1303 1223 1240 1242 1322 1138
+  Number of 2-cells per rank: 997 1050 1020 1020 1023 1045 1052 1015 1024 1029 1063 980
+  Number of 3-cells per rank: 282 282 282 281 281 281 281 281 281 281 281 281
+Labels:
+  depth: 4 strata with value/size (0 (462), 1 (1176), 2 (997), 3 (282))
+  celltype: 4 strata with value/size (0 (462), 1 (1176), 4 (997), 7 (282))
+  Cell Sets: 2 strata with value/size (1 (27), 2 (255))
+  Face Sets: 3 strata with value/size (1 (169), 3 (209), 6 (201))
+  sinker face label for DM face 1: 0 strata with value/size ()
+  sinker face label for DM face 2: 0 strata with value/size ()
+  foam face label for DM face 1: 1 strata with value/size (3 (72))
+  foam face label for DM face 2: 0 strata with value/size ()
+Field Q2:
+  adjacency FEM
+----- Ratel Quasistatic Example -----
+
+Ratel Context:
+  MPI:
+    Hostname: noether
+    Total ranks: 12
+  libCEED:
+    Backend resource: /cpu/self/avx/blocked
+    Backend MemType: host
+  PETSc:
+    VecType: standard
+    MatType: shell
+  Swarm:
+    Global Points: 421875
+    Local Points (min/max): [35125, 35250]
+  Mesh:
+    Global DoFs: 73167
+    Local DoFs: [5124, 6744]
+  Method: material point method
+  Solver: quasistatic solver
+  Materials:
+    Ratel Material:
+      Name: sinker
+      Model: Neo-Hookean hyperelasticity at finite strain, in current configuration, with MPM
+        Command line option: elasticity-mpm-neo-hookean-current
+        Active fields:
+          Field 0:
+            Name:                 displacement
+            Number of components: 3
+            libCEED eval mode(s): gradient
+        Number of stored components: 16
+        Number of state components:  9
+        Diagnostic output size:
+          Projected:  16
+          Dual/Nodal: 1
+        Model Parameters:
+          -rho:
+            Description:  Density (kg/m^3)
+            Restrictions: rho >= 0
+            Required:     false (Default: 1.)
+            Value:        8050.
+          -nu:
+            Description:  Poisson's ratio (unitless)
+            Restrictions: 0 <= nu < 0.5
+            Required:     true
+            Value:        0.49
+          -E:
+            Description:  Young's Modulus (Pa)
+            Restrictions: E >= 0
+            Required:     true
+            Value:        190000.
+          -mu:
+            Description:  Shear Modulus: E / (2 (1 + nu)) (Pa)
+            Restrictions: mu >= 0
+            Required:     false (Default: 0.)
+            Value:        63758.4
+          -lambda:
+            Description:  First Lame parameter: 2 mu nu / (1 - 2 nu) (Pa)
+            Restrictions: lambda >= 0
+            Required:     false (Default: 0.)
+            Value:        3.12416e+06
+          -bulk:
+            Description:  Bulk Modulus: 2 mu (1 + nu) / (3 (1 - 2 nu)) (Pa)
+            Restrictions: bulk >= 0
+            Required:     false (Default: 0.)
+            Value:        3.16667e+06
+          -two_mu:
+            Description:  Shear Modulus multiplied by 2 (Pa)
+            Restrictions: mu >= 0
+            Required:     false (Default: 0.)
+            Value:        127517.
+      Forcing: user-specified body force
+          1 acceleration vector(s) with no interpolation
+            t = 1.000: [0.000000, 0.000000, -3.000000]
+    Ratel Material:
+      Name: foam
+      Model: Neo-Hookean hyperelasticity at finite strain, in current configuration, with MPM
+        Command line option: elasticity-mpm-neo-hookean-current
+        Active fields:
+          Field 0:
+            Name:                 displacement
+            Number of components: 3
+            libCEED eval mode(s): gradient
+        Number of stored components: 16
+        Number of state components:  9
+        Diagnostic output size:
+          Projected:  16
+          Dual/Nodal: 1
+        Model Parameters:
+          -rho:
+            Description:  Density (kg/m^3)
+            Restrictions: rho >= 0
+            Required:     false (Default: 1.)
+            Value:        15.
+          -nu:
+            Description:  Poisson's ratio (unitless)
+            Restrictions: 0 <= nu < 0.5
+            Required:     true
+            Value:        0.49
+          -E:
+            Description:  Young's Modulus (Pa)
+            Restrictions: E >= 0
+            Required:     true
+            Value:        5000.
+          -mu:
+            Description:  Shear Modulus: E / (2 (1 + nu)) (Pa)
+            Restrictions: mu >= 0
+            Required:     false (Default: 0.)
+            Value:        1677.85
+          -lambda:
+            Description:  First Lame parameter: 2 mu nu / (1 - 2 nu) (Pa)
+            Restrictions: lambda >= 0
+            Required:     false (Default: 0.)
+            Value:        82214.8
+          -bulk:
+            Description:  Bulk Modulus: 2 mu (1 + nu) / (3 (1 - 2 nu)) (Pa)
+            Restrictions: bulk >= 0
+            Required:     false (Default: 0.)
+            Value:        83333.3
+          -two_mu:
+            Description:  Shear Modulus multiplied by 2 (Pa)
+            Restrictions: mu >= 0
+            Required:     false (Default: 0.)
+            Value:        3355.7
+      Forcing: user-specified body force
+          1 acceleration vector(s) with no interpolation
+            t = 1.000: [0.000000, 0.000000, -3.000000]
+  Dirichlet (clamp) boundaries, field 0:
+    Face 1:  1 translation(s)/rotation(s) with linear interpolation between nodes
+      t = 1.000:
+        Translation:         [0.000000, 0.000000, 0.000000]
+        Rotation axis:       [0.000000, 0.000000, 0.000000]
+        Rotation polynomial: [0.000000, 0.000000]
+    Face 2:  1 translation(s)/rotation(s) with linear interpolation between nodes
+      t = 1.000:
+        Translation:         [0.000000, 0.000000, 0.000000]
+        Rotation axis:       [0.000000, 0.000000, 0.000000]
+        Rotation polynomial: [0.000000, 0.000000]
+    Face 3:  1 translation(s)/rotation(s) with linear interpolation between nodes
+      t = 1.000:
+        Translation:         [0.000000, 0.000000, 0.000000]
+        Rotation axis:       [0.000000, 0.000000, 0.000000]
+        Rotation polynomial: [0.000000, 0.000000]
+    Face 4:  1 translation(s)/rotation(s) with linear interpolation between nodes
+      t = 1.000:
+        Translation:         [0.000000, 0.000000, 0.000000]
+        Rotation axis:       [0.000000, 0.000000, 0.000000]
+        Rotation polynomial: [0.000000, 0.000000]
+    Face 5:  1 translation(s)/rotation(s) with linear interpolation between nodes
+      t = 1.000:
+        Translation:         [0.000000, 0.000000, 0.000000]
+        Rotation axis:       [0.000000, 0.000000, 0.000000]
+        Rotation polynomial: [0.000000, 0.000000]
+    Face 6:  1 translation(s)/rotation(s) with linear interpolation between nodes
+      t = 1.000:
+        Translation:         [0.000000, 0.000000, 0.000000]
+        Rotation axis:       [0.000000, 0.000000, 0.000000]
+        Rotation polynomial: [0.000000, 0.000000]
+  Initial condition:
+    Type: zero initial condition
+  Finite elements, field 0:
+    Polynomial order: 2
+    Additional quadrature points: 0
+    Basis application: tensor product
+    Element topology: hexahedron
+  Geometry order for diagnostic values mesh: use solution mesh geometric order
+  Has manufactured solution: no
+  Expected strain energy: not set
+0 TS dt 0.05 time 0.
+    0 SNES Function norm 1.507841465054e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1572
+    1 SNES Function norm 2.907351767720e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1471
+    2 SNES Function norm 5.978194575118e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1592
+    3 SNES Function norm 1.144960148590e-02
+      Linear solve converged due to CONVERGED_RTOL iterations 1294
+    4 SNES Function norm 1.148822456926e-07
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 4
+1 TS dt 0.05 time 0.05
+    0 SNES Function norm 1.462201144271e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1782
+    1 SNES Function norm 3.497067614643e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1469
+    2 SNES Function norm 5.303146552255e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1642
+    3 SNES Function norm 6.183793110256e-03
+      Linear solve converged due to CONVERGED_RTOL iterations 1370
+    4 SNES Function norm 5.960267302035e-08
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 4
+2 TS dt 0.05 time 0.1
+    0 SNES Function norm 1.468845574748e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1882
+    1 SNES Function norm 3.309331411359e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1547
+    2 SNES Function norm 6.364530226482e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1955
+    3 SNES Function norm 7.908625459108e-03
+      Linear solve converged due to CONVERGED_RTOL iterations 1574
+    4 SNES Function norm 1.014083573797e-07
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 4
+3 TS dt 0.05 time 0.15
+    0 SNES Function norm 1.483820319314e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 2026
+    1 SNES Function norm 3.145904671251e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1689
+    2 SNES Function norm 7.342679398138e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1891
+    3 SNES Function norm 1.744916410368e-02
+      Linear solve converged due to CONVERGED_RTOL iterations 1726
+    4 SNES Function norm 1.966457754511e-07
+      Linear solve converged due to CONVERGED_RTOL iterations 2135
+    5 SNES Function norm 8.378237380897e-12
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 5
+4 TS dt 0.05 time 0.2
+    0 SNES Function norm 1.441406967585e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1958
+    1 SNES Function norm 3.361086920909e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1637
+    2 SNES Function norm 5.349715483594e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1814
+    3 SNES Function norm 7.385259131351e-03
+      Linear solve converged due to CONVERGED_RTOL iterations 1542
+    4 SNES Function norm 7.496700336042e-08
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 4
+5 TS dt 0.05 time 0.25
+    0 SNES Function norm 1.482259116718e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1914
+    1 SNES Function norm 2.929655632779e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1622
+    2 SNES Function norm 6.085131673606e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1768
+    3 SNES Function norm 8.449377401550e-03
+      Linear solve converged due to CONVERGED_RTOL iterations 1650
+    4 SNES Function norm 9.178037597187e-08
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 4
+6 TS dt 0.05 time 0.3
+    0 SNES Function norm 1.490535610330e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1895
+    1 SNES Function norm 3.870241200467e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1581
+    2 SNES Function norm 9.440029524317e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1728
+    3 SNES Function norm 1.720651014706e-02
+      Linear solve converged due to CONVERGED_RTOL iterations 1395
+    4 SNES Function norm 2.304071293159e-07
+      Linear solve converged due to CONVERGED_RTOL iterations 1978
+    5 SNES Function norm 6.801055070498e-12
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 5
+7 TS dt 0.05 time 0.35
+    0 SNES Function norm 1.442462173620e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1934
+    1 SNES Function norm 5.862674108483e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1552
+    2 SNES Function norm 1.211801880274e+00
+      Linear solve converged due to CONVERGED_RTOL iterations 1730
+    3 SNES Function norm 1.141328769144e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1220
+    4 SNES Function norm 2.547767256900e-06
+      Linear solve converged due to CONVERGED_RTOL iterations 1896
+    5 SNES Function norm 2.541203371019e-11
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 5
+8 TS dt 0.05 time 0.4
+    0 SNES Function norm 1.473360352326e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1932
+    1 SNES Function norm 3.785439847833e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1625
+    2 SNES Function norm 7.204863428872e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1792
+    3 SNES Function norm 1.546291542636e-02
+      Linear solve converged due to CONVERGED_RTOL iterations 1376
+    4 SNES Function norm 1.481935495308e-07
+      Linear solve converged due to CONVERGED_RTOL iterations 2075
+    5 SNES Function norm 4.773129640208e-12
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 5
+9 TS dt 0.05 time 0.45
+    0 SNES Function norm 1.488000720035e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1953
+    1 SNES Function norm 3.518774480541e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1633
+    2 SNES Function norm 8.415058221997e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1778
+    3 SNES Function norm 1.683797473417e-02
+      Linear solve converged due to CONVERGED_RTOL iterations 1434
+    4 SNES Function norm 1.873348340114e-07
+      Linear solve converged due to CONVERGED_RTOL iterations 2277
+    5 SNES Function norm 4.239792710099e-12
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 5
+10 TS dt 0.05 time 0.5
+    0 SNES Function norm 1.447215287858e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1951
+    1 SNES Function norm 6.496847194502e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1549
+    2 SNES Function norm 1.668308866413e+00
+      Linear solve converged due to CONVERGED_RTOL iterations 1701
+    3 SNES Function norm 8.475407951116e-02
+      Linear solve converged due to CONVERGED_RTOL iterations 1203
+    4 SNES Function norm 1.017389555334e-06
+      Linear solve converged due to CONVERGED_RTOL iterations 1955
+    5 SNES Function norm 9.148822782334e-12
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 5
+11 TS dt 0.05 time 0.55
+    0 SNES Function norm 1.448641235111e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1964
+    1 SNES Function norm 7.488552200931e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1502
+    2 SNES Function norm 1.822781119488e+00
+      Linear solve converged due to CONVERGED_RTOL iterations 1628
+    3 SNES Function norm 3.221186144584e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1154
+    4 SNES Function norm 9.652631784359e-06
+      Linear solve converged due to CONVERGED_RTOL iterations 1834
+    5 SNES Function norm 9.272989519734e-11
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 5
+12 TS dt 0.05 time 0.6
+    0 SNES Function norm 1.480947162183e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1963
+    1 SNES Function norm 4.008648057211e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1601
+    2 SNES Function norm 7.386319567262e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1752
+    3 SNES Function norm 1.623419462054e-02
+      Linear solve converged due to CONVERGED_RTOL iterations 1378
+    4 SNES Function norm 1.460871851461e-07
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 4
+13 TS dt 0.05 time 0.65
+    0 SNES Function norm 1.478068299001e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1993
+    1 SNES Function norm 3.191981045259e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1620
+    2 SNES Function norm 7.012454168840e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1741
+    3 SNES Function norm 1.072047836603e-02
+      Linear solve converged due to CONVERGED_RTOL iterations 1480
+    4 SNES Function norm 1.073022654542e-07
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 4
+14 TS dt 0.05 time 0.7
+    0 SNES Function norm 1.447524990999e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1926
+    1 SNES Function norm 4.769816516487e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1512
+    2 SNES Function norm 9.062279358052e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1634
+    3 SNES Function norm 1.753576115443e-02
+      Linear solve converged due to CONVERGED_RTOL iterations 1285
+    4 SNES Function norm 1.694692207920e-07
+      Linear solve converged due to CONVERGED_RTOL iterations 2061
+    5 SNES Function norm 2.651776313742e-12
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 5
+15 TS dt 0.05 time 0.75
+    0 SNES Function norm 1.430983199864e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1955
+    1 SNES Function norm 7.377521494801e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1469
+    2 SNES Function norm 1.292255633318e+00
+      Linear solve converged due to CONVERGED_RTOL iterations 1579
+    3 SNES Function norm 1.168743253336e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1113
+    4 SNES Function norm 1.453323537067e-06
+      Linear solve converged due to CONVERGED_RTOL iterations 2280
+    5 SNES Function norm 1.322770125621e-11
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 5
+16 TS dt 0.05 time 0.8
+    0 SNES Function norm 1.439788088235e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1923
+    1 SNES Function norm 4.974395304642e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1442
+    2 SNES Function norm 4.466476691015e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1589
+    3 SNES Function norm 1.168954594548e-02
+      Linear solve converged due to CONVERGED_RTOL iterations 1284
+    4 SNES Function norm 1.144720439662e-07
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 4
+17 TS dt 0.05 time 0.85
+    0 SNES Function norm 1.458050865359e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1959
+    1 SNES Function norm 4.059700482706e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1458
+    2 SNES Function norm 2.480229607001e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1610
+    3 SNES Function norm 3.059609582686e-03
+      Linear solve converged due to CONVERGED_RTOL iterations 1235
+    4 SNES Function norm 2.908057111795e-08
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 4
+18 TS dt 0.05 time 0.9
+    0 SNES Function norm 1.470642499357e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1956
+    1 SNES Function norm 3.742224387112e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1437
+    2 SNES Function norm 1.621220249915e-01
+      Linear solve converged due to CONVERGED_RTOL iterations 1422
+    3 SNES Function norm 3.013688231601e-03
+      Linear solve converged due to CONVERGED_RTOL iterations 1272
+    4 SNES Function norm 2.831376365505e-08
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 4
+19 TS dt 0.05 time 0.95
+    0 SNES Function norm 1.468606180673e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1897
+    1 SNES Function norm 2.584787725328e+01
+      Linear solve converged due to CONVERGED_RTOL iterations 1384
+    2 SNES Function norm 7.470459715427e-02
+      Linear solve converged due to CONVERGED_RTOL iterations 1479
+    3 SNES Function norm 2.791531019353e-04
+      Linear solve converged due to CONVERGED_RTOL iterations 1352
+    4 SNES Function norm 2.625465246087e-09
+    Nonlinear solve converged due to CONVERGED_FNORM_RELATIVE iterations 4
+20 TS dt 0.05 time 1.
+TS steps: 20
+TS converged reason: CONVERGED_TIME
+Computed strain energy: 2.464780052617e+04
+Max displacement:       [1.137284228907e-01, 1.137858851218e-01, 3.818434856475e-01]
+Surface top:
+  Centroid:             [0.000000000000e+00, 7.632783294298e-17, -5.000000000000e-01]
+  Surface Force:        [-2.212230529514e+03, 1.766700987313e+03, -3.488689517286e+04]
+Surface bottom:
+  Centroid:             [2.775557561563e-17, -6.938893903907e-18, 5.000000000000e-01]
+  Surface Force:        [1.477308046049e-03, 2.212751685008e-01, -1.922656104428e+03]
+Time taken to compute solution (sec): 9938.2
+WARNING! There are options you set that were not used!
+WARNING! could be spelling mistake, etc!
+There is one unused database option. It is:
+Option left: name:-swarm_dm_view (no value) source: file
