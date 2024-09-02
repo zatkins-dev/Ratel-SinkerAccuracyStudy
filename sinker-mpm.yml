@@ -4,13 +4,12 @@
 order: 2
 
 dm_plex:
-  filename: /home/zatkins/project/micromorph/outputs/mpm-sinker-accuracy/meshes/sinker_hex_10.msh
+  filename: /home/zatkins/project/micromorph/outputs/mpm-sinker-accuracy/meshes/sinker_hex_5.msh
   simplex: 0
-  hash_location: true
 
 method: mpm
 mpm:
-  point_location_type: uniform 
+  point_location_type: uniform
   num_points_per_cell: 125
 
 material: sinker,foam
@@ -50,8 +49,10 @@ forcing_body:
   vector: 0,0,-60
 
 # Needed until Ceed*LinearAssemble* are implemented for points
-snes_mf:
-pc_type: none
+pc_type: jacobi
+
+# lumped projection
+# mpm_ksp_type: preonly
 
 # surface forces
 surface_force_faces: top,bottom
@@ -61,12 +62,6 @@ surface_force_face:
 
 # monitoring
 ts_monitor:
-  solution: cgns:/home/zatkins/project/micromorph/outputs/mpm-sinker-accuracy/mpm-uniform/solution.cgns
-  diagnostic_quantities: cgns:/home/zatkins/project/micromorph/outputs/mpm-sinker-accuracy/mpm-uniform/diagnostic.cgns
-  strain_energy: ascii:/home/zatkins/project/micromorph/outputs/mpm-sinker-accuracy/mpm-uniform/strain_energy.csv
-  surface_force_per_face: ascii:/home/zatkins/project/micromorph/outputs/mpm-sinker-accuracy/mpm-uniform/surface_force.csv
-  swarm: ascii:/home/zatkins/project/micromorph/outputs/mpm-sinker-accuracy/mpm-uniform/swarm.xmf
-ts_monitor:
 snes_monitor:
 swarm_orig_dm_view:
-swarm_dm_view: 
+swarm_dm_view:

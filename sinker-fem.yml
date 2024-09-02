@@ -4,7 +4,7 @@
 order: 2
 
 dm_plex:
-  filename: /home/zatkins/project/micromorph/outputs/mpm-sinker-accuracy/meshes/sinker_hex_10.msh
+  filename: /home/zatkins/project/micromorph/outputs/mpm-sinker-accuracy/meshes/sinker_hex_5.msh
   simplex: 0
 
 material: sinker,foam
@@ -57,10 +57,5 @@ surface_force_face:
   bottom_label_value: 2
 
 # monitoring
-ts_monitor:
-  solution: cgns:/home/zatkins/project/micromorph/outputs/mpm-sinker-accuracy/fem/solution.cgns
-  diagnostic_quantities: cgns:/home/zatkins/project/micromorph/outputs/mpm-sinker-accuracy/fem/diagnostic.cgns
-  strain_energy: ascii:/home/zatkins/project/micromorph/outputs/mpm-sinker-accuracy/fem/strain_energy.csv
-  surface_force_per_face: ascii:/home/zatkins/project/micromorph/outputs/mpm-sinker-accuracy/fem/surface_force.csv
 ts_monitor:
 snes_monitor:
